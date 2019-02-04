@@ -58,9 +58,41 @@ class MovieReviews
     summary_array
   end 
 
+  def retrieve_links
+      links = []
+      retrieve_results.each{ |link|
+      links << link['link']
+    }
+    links 
+  end 
+
+  def retrieve_url 
+      url = [] 
+      retrieve_links.each{ |url_links|
+      url << url_links['url']
+    }
+    url 
+  end 
+
+  def retreive_multimedia
+      multimedia = []
+      retrieve_results.each{ |media|
+      multimedia << media['multimedia']
+    }
+    multimedia
+  end 
+
+  def retrieve_src_image 
+      src = []
+      retreive_multimedia.each{ |jpg|
+      src << jpg['src']
+    }
+    src
+  end 
+
 
 end 
 
-#  test = MovieReviews.new 
-# test.reviews('picks')
-#  p test.date_integer
+ test = MovieReviews.new 
+test.reviews('picks')
+ p test.retreive_multimedia

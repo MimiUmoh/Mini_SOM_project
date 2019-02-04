@@ -33,7 +33,24 @@ describe MoviesNYT do
       end 
     end 
 
+    it 'Summary short should be a string' do 
+      @review_picks.retrieve_summary.each do |summary|
+        expect(summary).to be_kind_of(String)
+      end 
+    end 
 
+    it 'URL should contain basic elements of a link' do 
+      @review_picks.retrieve_url.each do |url|
+        expect(url).to start_with('http://www.nytimes.com')
+      end 
+    end 
+
+
+    it 'SRC image link should have .jpg at the end' do 
+      @review_picks.retrieve_src_image.each do |link|
+        expect(link).to end_with('.jpg').and start_with('https://static01.nyt.com/images')
+      end 
+    end 
 
 
 
