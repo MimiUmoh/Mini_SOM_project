@@ -1,13 +1,22 @@
 require 'spec_helper'
 
-
 describe MoviesNYT do
   context  'Critics picks' do 
     before(:all) do 
       @review_picks = MoviesNYT.new.movie_reviews_nyt
       @review_picks.reviews('picks')
     end 
+     
+    it 'Has more should be true' do 
+      expect(@review_picks.retrieve_has_more). to be true 
+    end 
 
+
+    it 'MPA rating has to be a sting' do 
+      @review_picks.retreive_mpaa_writing.each do |rating|
+        expect(rating).to be_kind_of(String)
+      end 
+    end 
 
     it 'Display title should be a string' do 
       @review_picks.retrieve_display_title.each do |title|
@@ -21,7 +30,7 @@ describe MoviesNYT do
       end 
     end 
 
-    it 'By Line should be in all uppercase letters' do 
+    it 'By Line should be a string' do 
       @review_picks.retrieve_by_line.each do |byline|
         expect(byline).to be_kind_of(String)
       end 
@@ -45,16 +54,24 @@ describe MoviesNYT do
       end 
     end 
 
-
     it 'SRC image link should have .jpg at the end' do 
       @review_picks.retrieve_src_image.each do |link|
         expect(link).to end_with('.jpg').and start_with('https://static01.nyt.com/images')
       end 
     end 
 
+    it 'Height should be an integer' do 
+      @review_picks.retrieve_height.each do |height|
+        expect(height).to be_kind_of(Integer)
+      end 
+    end  
 
+    it 'Width should be an integer' do 
+      @review_picks.retrieve_width.each do |width|
+        expect(width).to be_kind_of(Integer)
+      end 
+    end 
 
   end 
-
 
 end 
