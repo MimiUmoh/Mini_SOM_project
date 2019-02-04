@@ -43,14 +43,24 @@ class MovieReviews
   end 
 
   def retrieve_date 
-    date = []
-    retrieve_results.each{ |date_type|
-    date << date_type['openinig_date']}
+      date = []
+      retrieve_results.each{ |date_type|
+      date << date_type['openinig_date'].to_i
+    }
+    date
+  end 
+
+  def retrieve_summary 
+      summary_array = []
+      retrieve_results.each{ |summary|
+      summary_array << summary['summary_short']
+    }
+    summary_array
   end 
 
 
 end 
 
-# test = MovieReviews.new 
+#  test = MovieReviews.new 
 # test.reviews('picks')
-#  p test.retrieve_by_line
+#  p test.date_integer

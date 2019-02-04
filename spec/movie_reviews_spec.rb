@@ -27,6 +27,12 @@ describe MoviesNYT do
       end 
     end 
 
+    it 'Date  should contain integers even though it is string' do 
+      @review_picks.retrieve_date.each do |date|
+        expect(date).to be_kind_of(Integer)
+      end 
+    end 
+
 
 
 
