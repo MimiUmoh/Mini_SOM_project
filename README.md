@@ -6,7 +6,7 @@ The SOM was created for the New York times API to test their movie reviews criti
 
 ### Languages and tools used
 * Ruby
-* Rspec
+* Rspec (tool)
 
 ### Gems required
 * httparty
@@ -16,6 +16,7 @@ The SOM was created for the New York times API to test their movie reviews criti
 1. You have the option of downloading the SOM as a zip or git cloning it onto your terminal.
 2. Once you have done that, you can then open the application on a text editor such a vscode or atom to attempt some testing.
 
+### How to use the application
 1.	To use the application, you need to get your own API key for movie reviews. Follow this link https://developer.nytimes.com/  to create your account.
 2.	Once You have your API key, you can use it to set up your base uri and endpoint that is on the lib/services/movie_reviews.rb file. Use this link to help you with the setup https://developer.nytimes.com/docs/movie-reviews-api/1/overview. Always make sure you API key is positioned at the end of your endpoint.
 3.	If you have not got the json and httparty gem installed, make sure you install them by doing  gem install ‘json’ , gem install ‘httparty.’
@@ -23,4 +24,15 @@ The SOM was created for the New York times API to test their movie reviews criti
 5.	Once you have sorted that out you can start writing your methods in lib/services/movie_reviews.rb.
 6.	Once you have done that, you can start writing your tests in spec/movie_reviews_spec.rb.
 7.	You can run rspec on your terminal to check if your tests have passed or failed.
+
+
+
+### Challenges
+1.	Planning of tests 
+2.	Did not test enough services
+3.	Repetitive tests
+4.	Did not target fields to test if specific datatype were present.
+
+### Learning points
+1.	Looping
 
