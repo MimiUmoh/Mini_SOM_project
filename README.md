@@ -26,7 +26,6 @@ The SOM was created for the New York times API to test their movie reviews criti
 7.	You can run rspec on your terminal to check if your tests have passed or failed.
 
 
-
 ### Challenges
 1.	Planning of tests 
 2.	Did not test enough services

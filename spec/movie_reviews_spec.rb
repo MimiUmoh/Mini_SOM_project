@@ -1,7 +1,7 @@
 require 'spec_helper'
 
 describe MoviesNYT do
-  context  'Critics picks' do 
+  context  'Movie Reviews Critics picks' do 
     before(:all) do 
       @review_picks = MoviesNYT.new.movie_reviews_nyt
       @review_picks.reviews('picks')

@@ -38,7 +38,6 @@ class MovieReviews
     mpaa
   end 
 
-
   def retrieve_display_title
     display_title = []
     retrieve_results.each{ |title|
@@ -144,7 +143,3 @@ class MovieReviews
   end 
 
 end 
-
- test = MovieReviews.new 
-test.reviews('picks')
- p test.retreive_multimedia
