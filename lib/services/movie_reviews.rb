@@ -4,9 +4,7 @@ require 'json'
 class MovieReviews
   include HTTParty
 
-  
   base_uri'https://api.nytimes.com/svc/movies/v2'
-
 
   def reviews(picks)
     @critics_picks = JSON.parse(self.class.get("/reviews/#{picks}.json?&api-key=Gp7vad0IiyO3Go6UBpFwvUQrMqpqmocA").body)
@@ -16,15 +14,26 @@ class MovieReviews
     @critics_picks['has_more']
   end 
 
-
   def retrieve_results
     @critics_picks['results']
+  end 
+
+  def retrieve_copyright
+    @critics_picks['copyright']
   end 
 
   def retreive_mpaa_writing 
     mpaa = []
     retrieve_results.each{ |rating|
     mpaa << rating['mpaa_rating']
+    }
+    mpaa
+  end 
+
+  def retreive_mpaa_writing_count
+    mpaa = []
+    retrieve_results.each{ |rating|
+    mpaa << rating['mpaa_rating'].chars 
     }
     mpaa
   end 
@@ -37,7 +46,6 @@ class MovieReviews
     }
     display_title
   end 
-
 
   def retrieve_critics_pick
     critics_pick = []
@@ -77,6 +85,14 @@ class MovieReviews
     links << link['link']
     }
     links 
+  end 
+
+  def retrieve_suggested_links 
+    suggested_link = []
+    retrieve_links.each{ |suggested|
+    suggested_link << suggested['suggested_link_text']
+    }
+    suggested_link
   end 
 
   def retrieve_url 
@@ -119,7 +135,13 @@ class MovieReviews
     width
   end 
 
-
+  def retrieve_date_updated
+    update = []
+    retrieve_results.each{ |date|
+    update << date['date_updated']
+    }
+    update 
+  end 
 
 end 
 
