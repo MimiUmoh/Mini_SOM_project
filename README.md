@@ -9,8 +9,11 @@ The SOM was created for the New York times API to test their movie reviews criti
 * Rspec (tool)
 
 ### Gems required
-* httparty
-* json
+* HttParty
+* Json
+* Rspec 
+
+
  
 ### How to download
 1. You have the option of downloading the SOM as a zip or git cloning it onto your terminal.
